@@ -49,6 +49,21 @@ navElements.forEach((element, i) => {
     element.innerText = siteContent["nav"][`nav-item-${i + 1}`];
 });
 
+// createLink function appends a new "a" element to the navbar.
+function createLink(linkName) {
+    const newElement = document.createElement('a');
+    newElement.href = "#";
+    newElement.innerText = linkName
+    nav.appendChild(newElement)
+}
+
+createLink("Sign In");
+createLink("Sign Up");
+
+// Making the navbar green
+nav.querySelectorAll("a").forEach(element => element.style.color = "green")
+
+
 // CTA
 let ctaContent = siteContent.cta;
 let CTAText = document.querySelector(".cta-text");
