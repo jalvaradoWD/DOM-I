@@ -65,7 +65,6 @@ document.querySelector('#cta-img').src = ctaContent["img-src"]
 
 const mainContentData = siteContent["main-content"];
 const allMainContentData = Object.keys(mainContentData).map(key => mainContentData[key]);
-console.log(allMainContentData);
 
 const mainContent = document.querySelector(".main-content");
 const topContent = mainContent.querySelector('.top-content').querySelectorAll(".text-content");
@@ -89,3 +88,26 @@ addElementData(topContent, topContentData);
 addElementData(bottomContent, bottomContentData);
 
 middleImg.src = middleImgData
+
+/**
+ * Contact Area
+ * 
+ * The contact information of the webpage
+ */
+
+const contactData = siteContent.contact;
+const contactElement = document.querySelector(".contact");
+const allContactData = Object.keys(contactData).map(key => contactData[key]);
+
+Array.from(contactElement.children).forEach((element, i) => {
+    element.innerHTML = allContactData[i]
+})
+
+/**
+ * Footer Area
+ * 
+ * The footer element of the webpage
+ */
+
+const footerElement = document.querySelector("footer p");
+footerElement.innerHTML = siteContent.footer.copyright
